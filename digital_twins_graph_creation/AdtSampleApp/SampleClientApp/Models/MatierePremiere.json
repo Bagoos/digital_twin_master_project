@@ -1,0 +1,38 @@
+{
+  "@id": "dtmi:MatierePremiere;1",
+  "@type": "Interface",
+  "displayName": "MatierePremiere",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "NomIngredient",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetPourTransport",
+      "displayName": "transmetPourTransport"
+    }
+  ]
+}

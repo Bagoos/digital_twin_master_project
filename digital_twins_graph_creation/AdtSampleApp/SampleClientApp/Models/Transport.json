@@ -1,0 +1,43 @@
+{
+  "@id": "dtmi:Transport;1",
+  "@type": "Interface",
+  "displayName": "Transport",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "MarchandiseTransporte",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "IdTwinsFournisseurOuStockage",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetPourStockage",
+      "displayName": "transmetPourStockage"
+    }
+  ]
+}

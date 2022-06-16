@@ -1,0 +1,43 @@
+{
+  "@id": "dtmi:StockageMarchandise;1",
+  "@type": "Interface",
+  "displayName": "StockageMarchandise",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "MarchandiseStockee",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "IdTwinsTransporteur",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetPourFabricationOuTransport",
+      "displayName": "transmetPourFabricationOuTransport"
+    }
+  ]
+}

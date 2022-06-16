@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Transporteur matiere premire</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+
+    <div class="page_info">
+        <p>
+            Hello user ! <br>
+            Date:
+            <script>document.write(new Date().toDateString());</script> <br>
+            Time:
+            <script>document.write((new Date().getHours()) + ":" + (new Date().getMinutes()));</script>
+        </p>
+    </div>
+
+    <nav>
+        <ul class="navigation_bar">
+            <li><a href="http://localhost:5000/fournisseurMatPremiere">Fournisseur matière première</a></li>
+            <li><a href="http://localhost:5000/transporteurMatPremiere">Transporteur matière première</a></li>
+            <li><a href="http://localhost:5000/fabricant">Fabricant</a></li>
+            <li><a href="http://localhost:5000/transporteurProduit">Transporteur produit</a></li>
+            <li><a href="http://localhost:5000/distributeurProduit">Distributeur produit</a></li>
+            <li id="refresh_button"><a href="http://localhost:5000/transporteurMatPremiere">Rafraichir les données</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 class="title">Informations transporteur matière première</h1>
+
+    <section class="table">
+
+        <div class="all_table_content">
+            <div class="section_title">Transport</div>
+
+            <table id="myTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Marchandise transporte</th>
+                        <th>Code produit</th>
+                        <th>Temperature (°C)</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.3.DateAndTime}}</td>
+                        <td>{{data.3.MarchandiseTransporte}}</td>
+                        <td>{{data.3.CodeProduit}}</td>
+                        <td>{{data.3.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>{{data.4.DateAndTime}}</td>
+                        <td>{{data.4.MarchandiseTransporte}}</td>
+                        <td>{{data.4.CodeProduit}}</td>
+                        <td>{{data.4.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>{{data.5.DateAndTime}}</td>
+                        <td>{{data.5.MarchandiseTransporte}}</td>
+                        <td>{{data.5.CodeProduit}}</td>
+                        <td>{{data.5.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <br><br><br>
+
+
+        <div class="historic_content">
+            <button onclick="myFunction()">Afficher l'historique du fourniseur</button>
+
+            <br><br><br>
+
+            <div id="display_historic_content">
+
+                <div class="all_table_content_historic">
+
+                    <div class="section_title">Matière première</div>
+
+                    <table id="myTable1" class="display">
+                        <thead>
+                            <tr>
+                                <th>Date et Heure (UTC+2)</th>
+                                <th>Nom ingredient</th>
+                                <th>Code produit</th>
+                                <th>Temperature (°C)</th>
+                                <th>Commentaire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{data.0.DateAndTime}}</td>
+                                <td>{{data.0.NomIngredient}}</td>
+                                <td>{{data.0.CodeProduit}}</td>
+                                <td>{{data.0.Temperature}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <br><br><br><br>
+
+                <div class="all_table_content_historic">
+                    <div class="section_title">Conditionnment</div>
+
+                    <table id="myTable2" class="display">
+                        <thead>
+                            <tr>
+                                <th>Date et Heure (UTC+2)</th>
+                                <th>Nom Conditionnement</th>
+                                <th>Code produit</th>
+                                <th>Matiere</th>
+                                <th>Commentaire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{data.1.DateAndTime}}</td>
+                                <td>{{data.1.NomConditionnement}}</td>
+                                <td>{{data.1.CodeProduit}}</td>
+                                <td>{{data.1.Matiere}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>{{data.2.DateAndTime}}</td>
+                                <td>{{data.2.NomConditionnement}}</td>
+                                <td>{{data.2.CodeProduit}}</td>
+                                <td>{{data.2.Matiere}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("display_historic_content");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+
+        </div>
+
+    </section>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable1').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable2').DataTable();
+    });
+
+</script>
+
+</html>

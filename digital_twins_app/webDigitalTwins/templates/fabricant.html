@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Fabricant</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+
+    <div class="page_info">
+        <p>
+            Hello user ! <br>
+            Date:
+            <script>document.write(new Date().toDateString());</script> <br>
+            Time:
+            <script>document.write((new Date().getHours()) + ":" + (new Date().getMinutes()));</script>
+        </p>
+    </div>
+
+    <nav>
+        <ul class="navigation_bar">
+            <li><a href="http://localhost:5000/fournisseurMatPremiere">Fournisseur matière première</a></li>
+            <li><a href="http://localhost:5000/transporteurMatPremiere">Transporteur matière première</a></li>
+            <li><a href="http://localhost:5000/fabricant">Fabricant</a></li>
+            <li><a href="http://localhost:5000/transporteurProduit">Transporteur produit</a></li>
+            <li><a href="http://localhost:5000/distributeurProduit">Distributeur produit</a></li>
+            <li id="refresh_button"><a href="http://localhost:5000/fabricant">Rafraichir les données</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="title">Informations fabricant</h1>
+
+    <section class="table">
+
+        <div class="all_table_content">
+            <div class="section_title">Stockage marchandise</div>
+
+            <table id="myTable" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Marchandise stockee</th>
+                        <th>Code produit</th>
+                        <th>Temperature (°C)</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.3.DateAndTime}}</td>
+                        <td>{{data.3.MarchandiseStockee}}</td>
+                        <td>{{data.3.CodeProduit}}</td>
+                        <td>{{data.3.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <br><br><br><br>
+
+        <div class="all_table_content">
+            <div class="section_title">Stockage conditionnement</div>
+
+            <table id="myTable1" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Conditionnement stockee</th>
+                        <th>Code produit</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.4.DateAndTime}}</td>
+                        <td>{{data.4.ConditionnementStockee}}</td>
+                        <td>{{data.4.CodeProduit}}</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>{{data.5.DateAndTime}}</td>
+                        <td>{{data.5.ConditionnementStockee}}</td>
+                        <td>{{data.5.CodeProduit}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <br><br><br><br>
+
+        <div class="all_table_content">
+            <div class="section_title">Fabrication</div>
+
+            <table id="myTable2" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Produit fabrique</th>
+                        <th>Code produit</th>
+                        <th>Temperature (°C)</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.6.DateAndTime}}</td>
+                        <td>{{data.6.ProduitFabrique}}</td>
+                        <td>{{data.6.CodeProduit}}</td>
+                        <td>{{data.6.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <br><br><br><br>
+
+        <div class="all_table_content">
+            <div class="section_title">Test qualité</div>
+
+            <table id="myTable3" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Code produit</th>
+                        <th>Qualite produit</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.7.DateAndTime}}</td>
+                        <td>{{data.7.CodeProduit}}</td>
+                        <td>{{data.7.QualiteProduit}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <br><br><br><br>
+
+        <div class="all_table_content">
+            <div class="section_title">Stockage marchandise</div>
+
+            <table id="myTable4" class="display">
+                <thead>
+                    <tr>
+                        <th>Date et Heure (UTC+2)</th>
+                        <th>Marchandise stockee</th>
+                        <th>Code produit</th>
+                        <th>Temperature (°C)</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{data.8.DateAndTime}}</td>
+                        <td>{{data.8.MarchandiseStockee}}</td>
+                        <td>{{data.8.CodeProduit}}</td>
+                        <td>{{data.8.Temperature}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <br><br><br>
+
+
+        <div class="historic_content">
+            <button onclick="myFunction()">Afficher l'historique du transporteur</button>
+
+            <br><br><br>
+
+            <div id="display_historic_content">
+
+                <div class="all_table_content_historic">
+                    <div class="section_title">Transport</div>
+
+                    <table id="myTable5" class="display">
+                        <thead>
+                            <tr>
+                                <th>Date et Heure (UTC+2)</th>
+                                <th>Marchandise transporte</th>
+                                <th>Code produit</th>
+                                <th>Temperature (°C)</th>
+                                <th>Commentaire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{data.0.DateAndTime}}</td>
+                                <td>{{data.0.MarchandiseTransporte}}</td>
+                                <td>{{data.0.CodeProduit}}</td>
+                                <td>{{data.0.Temperature}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>{{data.1.DateAndTime}}</td>
+                                <td>{{data.1.MarchandiseTransporte}}</td>
+                                <td>{{data.1.CodeProduit}}</td>
+                                <td>{{data.1.Temperature}}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>{{data.2.DateAndTime}}</td>
+                                <td>{{data.2.MarchandiseTransporte}}</td>
+                                <td>{{data.2.CodeProduit}}</td>
+                                <td>{{data.2.Temperature}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("display_historic_content");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+
+        </div>
+
+
+    </section>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable1').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable2').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable3').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable4').DataTable();
+    });
+
+    $(document).ready(function () {
+        $('#myTable5').DataTable();
+    });
+
+</script>
+
+</html>

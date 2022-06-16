@@ -1,0 +1,38 @@
+{
+  "@id": "dtmi:Fabrication;1",
+  "@type": "Interface",
+  "displayName": "Fabrication",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "ProduitFabrique",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetServiceQualite",
+      "displayName": "transmetServiceQualite"
+    }
+  ]
+}

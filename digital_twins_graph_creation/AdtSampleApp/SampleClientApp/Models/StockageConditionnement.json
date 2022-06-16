@@ -1,0 +1,38 @@
+{
+  "@id": "dtmi:StockageConditionnement;1",
+  "@type": "Interface",
+  "displayName": "StockageConditionnement",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "ConditionnementStockee",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "IdTwinsTransporteur",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetPourFabricationOuTransport",
+      "displayName": "transmetPourFabricationOuTransport"
+    }
+  ]
+}

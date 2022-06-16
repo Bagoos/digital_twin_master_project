@@ -1,0 +1,33 @@
+{
+  "@id": "dtmi:TestQualite;1",
+  "@type": "Interface",
+  "displayName": "TestQualite",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "QualiteProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetStockagePotDeMiel",
+      "displayName": "transmetStockagePotDeMiel"
+    }
+  ]
+}

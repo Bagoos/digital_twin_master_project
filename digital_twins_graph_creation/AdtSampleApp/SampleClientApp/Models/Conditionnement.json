@@ -1,0 +1,38 @@
+{
+  "@id": "dtmi:Conditionnement;1",
+  "@type": "Interface",
+  "displayName": "Conditionnement",
+  "@context": "dtmi:dtdl:context;2",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "DateAndTime",
+      "schema": "dateTime"
+    },
+    {
+      "@type": "Property",
+      "name": "NomConditionnement",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "CodeProduit",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Matiere",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "Commentaire",
+      "schema": "string"
+    },
+    {
+      "@type": "Relationship",
+      "name": "transmetPourTransport",
+      "displayName": "transmetPourTransport"
+    }
+  ]
+}
